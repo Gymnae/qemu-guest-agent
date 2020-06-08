@@ -8,7 +8,7 @@ LABEL summary="The QEMU Guest Agent" \
       architecture="x86_64" \
       maintainer="Vinzenz Feenstra <evilissimo@redhat.com>"
 
-RUN RUN apk --no-cache add qemu-guest-agent
+RUN apk --no-cache add qemu-guest-agent
 #RUN /bin/mkdir -p /etc/qemu
 #COPY qemu-ga.conf /etc/qemu/
 #COPY service.template tmpfiles.template config.json.template /exports/
