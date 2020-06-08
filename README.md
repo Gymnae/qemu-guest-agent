@@ -16,7 +16,7 @@ docker run -d \
   -v /run/systemd:/run/systemd \
   -v /var/log/ovirt-guest-agent:/var/log/ovirt-guest-agent \
   -v /var/run/docker.sock:/var/run/docker.sock:ro \
-  gymnae/flatcar_linux-qemu-agent:latest
+ gymnae/flatcar_linux-qemu-guest-agent:latest
   ```
   
   (inspired by https://github.com/nimmis/coreos-qemu-agent)
