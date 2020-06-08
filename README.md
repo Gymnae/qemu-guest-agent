@@ -2,6 +2,7 @@
 
 Run command:
 
+```
 docker run -d \
   --name qemu-agent \
   --restart=unless-stopped \
@@ -16,5 +17,6 @@ docker run -d \
   -v /var/log/ovirt-guest-agent:/var/log/ovirt-guest-agent \
   -v /var/run/docker.sock:/var/run/docker.sock:ro \
   gymnae/flatcar_linux-qemu-agent:latest
+  ```
   
   (inspired by https://github.com/nimmis/coreos-qemu-agent)
