@@ -1,4 +1,5 @@
-FROM centos
+FROM gymnae/alpine-base:master
+MAINTAINER Gunnar Falk <docker@grundstil.de>
 
 LABEL summary="The QEMU Guest Agent" \
       io.k8s.description="This package provides an agent to run inside guests, which communicates with the host over a virtio-serial channel named 'org.qemu.guest_agent.0'" \
@@ -7,9 +8,9 @@ LABEL summary="The QEMU Guest Agent" \
       architecture="x86_64" \
       maintainer="Vinzenz Feenstra <evilissimo@redhat.com>"
 
-RUN yum -y --setopt=tsflags=nodocs install qemu-guest-agent
+RUN RUN apk --no-cache add qemu-guest-agent
 RUN /bin/mkdir -p /etc/qemu
 COPY qemu-ga.conf /etc/qemu/
 COPY service.template tmpfiles.template config.json.template /exports/
 
-CMD /bin/bash /usr/bin/qemu-ga
+CMD /bin/ash /usr/bin/qemu-ga
