@@ -13,4 +13,4 @@ RUN /bin/mkdir -p /etc/qemu
 COPY qemu-ga.conf /etc/qemu/
 COPY service.template tmpfiles.template config.json.template /exports/
 
-CMD /bin/ash /usr/bin/qemu-ga
+CMD /usr/sbin/qemu-ga -m virtio-serial -p /dev/virtio-ports/org.qemu.guest_agent.0
